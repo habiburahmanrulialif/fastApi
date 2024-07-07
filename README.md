@@ -11,109 +11,109 @@ This FastAPI application provides endpoints for user registration, authenticatio
 
 #### User Endpoints
 - Get Users
-> URL: /user
-> Method: GET
-> Description: Retrieve a list of all registered users.
-> Response: JSON object containing a list of users.
+1. URL: /user
+2. Method: GET
+3. Description: Retrieve a list of all registered users.
+4. Response: JSON object containing a list of users.
 
 - Register User
-> URL: /register
-> Method: POST
-> Description: Register a new user.
-> Request Body: UserBase (username, password)
-> Response: JSON object containing the new user's ID and username.
+1. URL: /register
+2. Method: POST
+3. Description: Register a new user.
+4. Request Body: UserBase (username, password)
+5. Response: JSON object containing the new user's ID and username.
 
 - Delete Current User
-> URL: /user/delete/me
-> Method: DELETE
-> Description: Delete the currently authenticated user.
-> Response: JSON object confirming the user deletion.
+1. URL: /user/delete/me
+2. Method: DELETE
+3. Description: Delete the currently authenticated user.
+4. Response: JSON object confirming the user deletion.
 
 #### Authentication Endpoints
 - Login for Access Token
-> URL: /token
-> Method: POST
-> Description: Authenticate the user and return a JWT access token.
-> Request Body: OAuth2PasswordRequestForm (username, password)
-> Response: JSON object containing the access token and token type.
+1. URL: /token
+2. Method: POST
+3. Description: Authenticate the user and return a JWT access token.
+4. Request Body: OAuth2PasswordRequestForm (username, password)
+5. Response: JSON object containing the access token and token type.
 
 #### Feedback Rating Endpoints
 - Create Feedback Rating
-> URL: /feedback
-> Method: POST
-> Description: Create a new feedback rating for an item.
-> Request Body: FeedbackRatingCreate (item_id, rating)
-> Response: JSON object containing the feedback rating details.
+1. URL: /feedback
+2. Method: POST
+3. Description: Create a new feedback rating for an item.
+4. Request Body: FeedbackRatingCreate (item_id, rating)
+5. Response: JSON object containing the feedback rating details.
 
 - Get Feedback Ratings
-> URL: /feedback/{item_id}
-> Method: GET
-> Description: Retrieve all feedback ratings for a specific item.
-> Response: JSON object containing a list of feedback ratings.
+1. URL: /feedback/{item_id}
+2. Method: GET
+3. Description: Retrieve all feedback ratings for a specific item.
+4. Response: JSON object containing a list of feedback ratings.
 
 #### Item Endpoints
 - Create Item
-> URL: /items
-> Method: POST
-> Description: Create a new item.
-> Request Body: ItemCreate (title)
-> Response: JSON object containing the item details.
+1. URL: /items
+2. Method: POST
+3. Description: Create a new item.
+4. Request Body: ItemCreate (title)
+5. Response: JSON object containing the item details.
 
 #### Utility Endpoints
 - Clean All Tables
-> URL: /clean
-> Method: POST
-> Description: Clean all tables by truncating them.
-> Response: JSON object confirming the tables have been cleaned.
+1. URL: /clean
+2. Method: POST
+3. Description: Clean all tables by truncating them.
+4. Response: JSON object confirming the tables have been cleaned.
 
 ### Database Models
 - User
-> Fields: id, username, hashed_password
+1. Fields: id, username, hashed_password
 
 - FeedbackRating
-> Fields: id, user_id, item_id, rating
+1. Fields: id, user_id, item_id, rating
 
 - Item
-> Fields: id, title
+1. Fields: id, title
 
 ### Schemas
 - UserBase
-> Fields: username, password
+1. Fields: username, password
 
 - Token
-> Fields: access_token, token_type, username
+1. Fields: access_token, token_type, username
 
 - TokenData
-> Fields: username
+1. Fields: username
 
 - FeedbackRatingCreate
-> Fields: item_id, rating
+1. Fields: item_id, rating
 
 - FeedbackRatingResponse
-> Fields: id, user_id, item_id, rating
+1. Fields: id, user_id, item_id, rating
 
 - ItemCreate
-> Fields: title
+1. Fields: title
 
 - ItemResponse
-> Fields: id, title
+1. Fields: id, title
 
 ### Security
 -Password Hashing
-> Passwords are hashed using the bcrypt algorithm for secure storage.
+1. Passwords are hashed using the bcrypt algorithm for secure storage.
 
 - JWT Authentication
-> JWT tokens are used for authenticating users. Tokens are created with a secret key and have an expiration time.
+1. JWT tokens are used for authenticating users. Tokens are created with a secret key and have an expiration time.
 
 ### CORS Configuration
 - Origins
-> The application allows all origins (*) for CORS. You can restrict this to specific origins as needed.
+1. The application allows all origins (*) for CORS. You can restrict this to specific origins as needed.
 
 - Allowed Methods
-> The application allows GET, POST, PUT, and DELETE methods. You can add or remove methods based on your requirements.
+1. The application allows GET, POST, PUT, and DELETE methods. You can add or remove methods based on your requirements.
 
 -Allowed Headers
-> The application allows all headers (*). You can specify which headers are allowed for the request.
+1. The application allows all headers (*). You can specify which headers are allowed for the request.
 
 ## Setup 
 > Python and [Git](https://git-scm.com) must be installed on your computer.  
