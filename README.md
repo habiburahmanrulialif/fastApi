@@ -33,9 +33,9 @@ Description: Delete the currently authenticated user.
 Response: JSON object confirming the user deletion.
 
 #### Authentication Endpoints
--Login for Access Token
+- Login for Access Token
 
-URL: /token
+> URL: /token
 Method: POST
 Description: Authenticate the user and return a JWT access token.
 Request Body: OAuth2PasswordRequestForm (username, password)
