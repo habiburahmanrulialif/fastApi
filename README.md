@@ -133,3 +133,7 @@ Run docker
 ```
 docker-compose up
 ```
+Run the front end
+```
+npm run dev
+```
